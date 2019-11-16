@@ -15,7 +15,7 @@ import { firebaseConfig, db } from '../Config';
 import { ScrollableComponent } from 'react-native-keyboard-aware-scroll-view';
 import { Container, Text } from 'native-base';
 import * as Font from 'expo-font';
-import { Fridge } from '../components/index';
+import { Menu, Fridge, LoadingPage } from '../components/index';
 
 const foodItems = db.collection('food-items');
 const users = db.collection('users');
@@ -44,22 +44,6 @@ export default function HomeScreen() {
       <ScrollView>
         <Fridge />
       </ScrollView>
-
-      <View style={styles.container}>
-        <View style={styles.tabBarInfoContainer}>
-          <Text style={styles.tabBarInfoText}>
-            This is a tab bar. You can edit it in:
-          </Text>
-
-          <View
-            style={[styles.codeHighlightContainer, styles.navigationFilename]}
-          >
-            <MonoText style={styles.codeHighlightText}>
-              navigation/MainTabNavigator.js
-            </MonoText>
-          </View>
-        </View>
-      </View>
     </Container>
   );
 }
