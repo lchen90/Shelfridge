@@ -23,7 +23,7 @@ const HomeStack = createStackNavigator(
 );
 
 HomeStack.navigationOptions = {
-  tabBarLabel: 'Fridge',
+  tabBarLabel: 'Fridge/Shelf',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -46,7 +46,7 @@ const LinksStack = createStackNavigator(
 );
 
 LinksStack.navigationOptions = {
-  tabBarLabel: 'Add to Fridge',
+  tabBarLabel: 'Add to Fridge/Shelf',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
