@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Container, Card, CardItem, Text, Left, Right } from 'native-base';
-import LottieView from 'lottie-react-native';
 
 export default class Fridge extends Component {
   render() {
