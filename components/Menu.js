@@ -13,14 +13,30 @@ import {
   Body,
   Content,
 } from 'native-base';
+import { InFridge, Fridge } from './index';
 
 export default class Menu extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showComponent: false,
+    };
+    this.onButtonClick = this.onButtonClick.bind(this);
+  }
+
+  onButtonClick() {
+    this.setState({
+      showComponent: true,
+    });
+  }
+
   render() {
     return (
       <Container>
         <Header />
+        {this.state.showComponent ? <Fridge /> : null}
         <Card style={{ flex: 0 }}>
-          <CardItem header button onPress={() => alert('This is Card Header')}>
+          <CardItem header button onPress={this.onButtonClick}>
             <Left>
               <Thumbnail
                 source={{

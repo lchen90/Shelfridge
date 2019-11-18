@@ -42,7 +42,7 @@ export default function HomeScreen() {
   return (
     <Container>
       <ScrollView>
-        <InFridge />
+        <Menu />
       </ScrollView>
     </Container>
   );

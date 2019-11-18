@@ -11,6 +11,7 @@ import {
 } from 'native-base';
 import _ from 'lodash';
 import { db } from '../Config';
+import { LoadingPage } from '.';
 
 export default class Fridge extends Component {
   constructor(props) {
@@ -40,7 +41,7 @@ export default class Fridge extends Component {
     console.log(keys);
     console.log(items);
     if (!items) {
-      return <div></div>;
+      return <LoadingPage />;
     } else {
       return (
         <Container>
@@ -49,6 +50,14 @@ export default class Fridge extends Component {
             {items.map(item => (
               //   const food = keys.filter(key => key.name == item.name);
               <CardItem>
+                {item.timein.includes(15) ? (
+                  <Thumbnail
+                    source={{
+                      uri:
+                        'https://res.cloudinary.com/teepublic/image/private/s--A5YYlrDZ--/t_Preview/b_rgb:191919,c_limit,f_jpg,h_630,q_90,w_630/v1506897583/production/designs/1942693_1.jpg',
+                    }}
+                  />
+                ) : null}
                 <Thumbnail
                   source={{
                     uri:
