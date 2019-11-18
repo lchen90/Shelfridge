@@ -19,7 +19,6 @@ const config = Platform.select({
 const HomeStack = createStackNavigator(
   {
     Home: HomeScreen,
-    InFridge: InFridge,
   },
   config
 );
@@ -67,7 +66,7 @@ const SettingsStack = createStackNavigator(
 );
 
 SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+  tabBarLabel: 'In Fridge',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}

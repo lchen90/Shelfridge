@@ -11,7 +11,6 @@ export default class LoadingPage extends React.Component {
             style={{ width: 400, height: 400 }}
             source={require('./animations/4762-food-carousel.json')}
             autoPlay
-            loop
           />
         </Content>
       </Container>

@@ -6,6 +6,7 @@ import t from 'tcomb-form-native';
 import firebase from 'firebase';
 import 'firestore';
 import { db } from '../Config';
+import { LoadingPage } from '../components/LoadingPage';
 
 const fridge = db.collection('fridge');
 const shelf = db.collection('shelf');
@@ -22,15 +23,23 @@ const Food = t.struct({
 export default class AddFood extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = { loading: false };
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ loading: true });
+    }, 3000);
   }
 
   onChange = value => {
     this.setState({ value });
+    console.log(value);
   };
 
   onPress = () => {
     var value = this.refs.form.getValue();
+    console.log('onPress');
     if (value.location === 'fridge') {
       const temp = value.timein;
       fridge.add({
@@ -57,23 +66,34 @@ export default class AddFood extends React.Component {
     //     console.log(`${doc.data().timein}`);
     //   });
     // });
-
-    return (
-      <Container>
-        <Form
-          ref="form"
-          type={Food}
-          value={this.state.value}
-          onChange={this.onChange}
-        />
-        <Button
-          title="Add"
-          onPress={this.onPress}
-          style={{ justifyContent: 'center' }}
-        >
-          <Text>Add</Text>
-        </Button>
-      </Container>
-    );
+    const { loading } = this.state;
+    if (!loading) {
+      return (
+        <Container>
+          <LoadingPage />
+        </Container>
+      );
+    } else {
+      return (
+        <Container>
+          <Form
+            ref="form"
+            type={Food}
+            value={this.state.value}
+            onChange={this.onChange}
+          />
+          <Button
+            title="Add"
+            onPress={this.onPress}
+            onPress={setState({
+              loading: true,
+            })}
+            style={{ justifyContent: 'center' }}
+          >
+            <Text>Add</Text>
+          </Button>
+        </Container>
+      );
+    }
   }
 }
