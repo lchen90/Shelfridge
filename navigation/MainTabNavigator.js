@@ -9,6 +9,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import { InFridge } from '../components/index';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -65,7 +66,7 @@ const SettingsStack = createStackNavigator(
 );
 
 SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+  tabBarLabel: 'In Fridge',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}

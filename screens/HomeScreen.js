@@ -15,7 +15,7 @@ import { firebaseConfig, db } from '../Config';
 import { ScrollableComponent } from 'react-native-keyboard-aware-scroll-view';
 import { Container, Text } from 'native-base';
 import * as Font from 'expo-font';
-import { Menu, Fridge, LoadingPage } from '../components/index';
+import { Menu, Fridge, LoadingPage, InFridge } from '../components/index';
 
 const foodItems = db.collection('food-items');
 const users = db.collection('users');
@@ -42,7 +42,7 @@ export default function HomeScreen() {
   return (
     <Container>
       <ScrollView>
-        <Fridge />
+        <Menu />
       </ScrollView>
     </Container>
   );
