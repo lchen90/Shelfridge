@@ -22,7 +22,7 @@
     "expo-constants": "^7.0.0",
     "expo-font": "~7.0.0",
     "expo-web-browser": "^7.0.0",
-    "firebase": "^7.3.0",
+    "firebase": "^10.9.0",
     "firestore": "^1.1.6",
     "lodash": "^4.17.15",
     "lottie-ios": "^3.1.3",
